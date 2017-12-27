@@ -4,8 +4,9 @@ LABEL maintainer="Tao Wang <moonavw@gmail.com>"
 USER root
 
 # https://wiki.alpinelinux.org/wiki/Docker
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" > /etc/apk/repositories \
-    && echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
+# use mirror since dl-cdn.alpinelinux.org is unstable
+RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" > /etc/apk/repositories \
+    && echo "http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
     && apk add --update docker
 
 RUN apk add --update py-pip \
