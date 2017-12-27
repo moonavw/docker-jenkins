@@ -1,5 +1,5 @@
-FROM jenkins:alpine
-MAINTAINER Tao Wang <moonavw@gmail.com>
+FROM jenkins/jenkins:alpine
+LABEL maintainer="Tao Wang <moonavw@gmail.com>"
 
 USER root
 
